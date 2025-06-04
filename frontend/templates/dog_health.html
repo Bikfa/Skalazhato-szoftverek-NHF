@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Egészségügyi Napló – Kutyus #{{ dog_id }}{% endblock %}
+
+{% block content %}
+<section class="form-container">
+    <h2>Egészségügyi Napló – Kutyus #{{ dog_id }}</h2>
+
+    <!-- Bejegyzések listázása -->
+    {% if records %}
+        <ul>
+            {% for record in records %}
+                <li>
+                    <strong>{{ record.created_at.split('T')[0] }}</strong> –
+                    {{ record.created_at.split('T')[1].split('.')[0] }}<br>
+                    {{ record.description }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Még nincs bejegyzés az egészségügyi naplóban.</p>
+    {% endif %}
+
+    <!-- Új bejegyzés hozzáadása -->
+    <form action="{{ url_for('create_health_record', dog_id=dog_id) }}" method="post">
+        <label>Új bejegyzés:</label><br>
+        <textarea name="description" rows="4" required></textarea><br>
+        <input type="submit" value="Mentés">
+    </form>
+</section>
+
+<footer>
+    <button onclick="location.href='{{ url_for('index') }}'">Vissza a listához</button>
+</footer>
+{% endblock %}

@@ -1,0 +1,252 @@
+/* Alapbeállítások */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Fejléc és lábléc */
+header, footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* Navigáció */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+/* Címek */
+h1, h2, h3 {
+    color: #2c3e50;
+    margin: 0 0 10px;
+}
+
+/* Riasztások */
+.alert {
+    padding: 12px 16px;
+    margin: 15px 0;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.alert.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Gombok és űrlapok */
+button, input[type="submit"] {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px 5px 5px 0;
+    transition: background-color 0.2s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Űrlap konténer */
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+/* Hibák */
+.error {
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+/* Gazdik listája */
+.owners {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Gazdi kártya */
+.owner {
+    background-color: #ffffff;
+    border-left: 6px solid #007bff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Kutyák része */
+.dogs {
+    background-color: #f9fbfd;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid #e1e8ed;
+}
+
+/* Egy kutya */
+.dog {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.dog:last-child {
+    border-bottom: none;
+}
+
+/* Kutyaképek */
+.dog img {
+    display: block;
+    margin-top: 8px;
+    border-radius: 6px;
+    max-width: 100px;
+    height: auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Speciális gombok színezése (opcionális) */
+button.edit {
+    background-color: #ffc107;
+}
+
+button.edit:hover {
+    background-color: #e0a800;
+}
+
+button.delete {
+    background-color: #dc3545;
+}
+
+button.delete:hover {
+    background-color: #c82333;
+}
+
+button.health {
+    background-color: #28a745;
+}
+
+button.health:hover {
+    background-color: #218838;
+}
+
+button.upload {
+    background-color: #17a2b8;
+}
+
+button.upload:hover {
+    background-color: #138496;
+}
+
+/* Alap gombstílus */
+button, input[type="submit"] {
+    padding: 6px 10px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 4px 4px 4px 0;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    transform: scale(1.02);
+}
+
+/* Funkció-specifikus színek */
+button.add,
+input[type="submit"].add {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button.add:hover,
+input[type="submit"].add:hover {
+    background-color: #0056b3;
+}
+
+button.edit,
+input[type="submit"].edit {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+button.edit:hover,
+input[type="submit"].edit:hover {
+    background-color: #e0a800;
+}
+
+input[type="submit"].delete,
+button.delete {
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 2px;
+    height: auto;
+    line-height: 1.2;
+    width: auto;
+    display: inline-block;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+input[type="submit"].delete:hover,
+button.delete:hover {
+    background-color: #c82333;
+    transform: scale(1.02);
+}
+
+button.health {
+    background-color: #28a745;
+    color: #fff;
+}
+
+button.health:hover {
+    background-color: #218838;
+}
+
+button.upload {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+button.upload:hover {
+    background-color: #138496;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kutya adatai</title>
+</head>
+<body>
+    <h1>Kutya adatai</h1>
+
+    <p><strong>ID:</strong> {{ dog.id }}</p>
+    <p><strong>Név:</strong> {{ dog.name }}</p>
+    <p><strong>Fajta:</strong> {{ dog.breed }}</p>
+    <p><strong>Szín:</strong> {{ dog.color }}</p>
+    <p><strong>Nem:</strong> {{ dog.gender }}</p>
+
+    {% if dog.image_path %}
+        <p><img src="{{ url_for('serve_image', filename=dog.image_path.split('/')[-1]) }}" alt="Kép" width="200"></p>
+    {% else %}
+        <p>Nincs kép feltöltve.</p>
+    {% endif %}
+
+    <h2>Egészségügyi napló</h2>
+    {% if dog.records %}
+        <ul>
+        {% for record in dog.records %}
+            <li>{{ record.date[:10] }} - <strong>{{ record.type }}</strong>: {{ record.description }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nincs elérhető bejegyzés.</p>
+    {% endif %}
+
+    <p>
+        <a href="/dogs/{{ dog.id }}/records">Új naplóbejegyzés hozzáadása</a><br>
+        <a href="/dogs/{{ dog.id }}/image">Kép feltöltése</a>
+    </p>
+    <a href="/">Vissza a főoldalra</a>
+</body>
+</html>

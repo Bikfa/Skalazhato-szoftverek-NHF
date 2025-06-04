@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Kép Feltöltése{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    {% if error %}
+        <div class="alert danger">{{ error }}</div>
+    {% endif %}
+    <form action="{{ url_for('upload_image', dog_id=dog_id) }}" method="post" enctype="multipart/form-data">
+        <label>Kép kiválasztása:</label><br>
+        <input type="file" name="image" accept="image/*" required><br>
+        <input type="submit" value="Feltöltés">
+    </form>
+</div>
+<footer>
+    <button onclick="location.href='{{ url_for('index') }}'">Vissza a listához</button>
+</footer>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Gazdi Szerkesztése{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    {% if error %}
+        <div class="alert danger">{{ error }}</div>
+    {% endif %}
+    <form action="{{ url_for('update_owner', owner_id=owner.id) }}" method="post">
+        <label>Név:</label><br>
+        <input type="text" name="name" value="{{ owner.name }}" required><br>
+        <label>Email:</label><br>
+        <input type="email" name="email" value="{{ owner.email }}" required><br>
+        <label>Jelszó:</label><br>
+        <input type="password" name="password" value="{{ owner.password }}" required><br>
+        <input type="submit" value="Frissítés">
+    </form>
+</div>
+<footer>
+    <button onclick="location.href='{{ url_for('index') }}'">Vissza a listához</button>
+</footer>
+{% endblock %}

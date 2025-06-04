@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Új Kutyus{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    {% if error %}
+        <div class="alert danger">{{ error }}</div>
+    {% endif %}
+    <form action="{{ url_for('create_dog', owner_id=owner_id) }}" method="post">
+        <label>Név:</label><br>
+        <input type="text" name="name" required><br>
+        <label>Fajta:</label><br>
+        <input type="text" name="breed" required><br>
+        <label>Szín:</label><br>
+        <input type="text" name="color" required><br>
+        <label>Nem:</label><br>
+        <input type="text" name="gender" required><br>
+        <input type="submit" value="Kutyus hozzáadása">
+    </form>
+</div>
+<footer>
+    <button onclick="location.href='{{ url_for('index') }}'">Vissza a listához</button>
+</footer>
+{% endblock %}

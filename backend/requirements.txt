@@ -1,0 +1,7 @@
+Flask==2.3.2
+Flask-SQLAlchemy==3.0.3
+PyMySQL==1.0.3
+redis==4.5.5
+python-dotenv==1.0.0
+Werkzeug==2.3.4
+cryptography>=41.0.0
